@@ -1,8 +1,118 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
 .container {
-   background-color: #16151B;
+   background-color: $primary-bg-color;
+   filter: brightness(150%) saturate(300%);
+
+   padding-top: 15px;
+   padding-bottom: 15px;
 
    a {
-      font-family: 'Raleway', sans-serif;
+      font-family: $fontFamilySecondary;
    }
 
+   @include media(mobile) {}
+
+   @include media(tablet) {}
+
+   @include media(desktop) {}
+}
+
+.wrapper {
+   @include flex(center, center);
+   gap: 40px;
+
+   svg {
+      display: block;
+   }
+}
+
+.logo {
+   transition: $transition;
+}
+
+.logo:hover {
+   transform: scale(1.1);
+}
+
+.box {
+   @include flex(space-between, center);
+   flex-grow: 1;
+}
+
+.nav ul {
+   @include flex(center, center);
+   gap: 20px;
+}
+
+
+.link {
+   position: relative;
+   color: $secondary-text-color;
+   font-size: 1.25rem;
+
+}
+
+.link::before {
+   @include before();
+   background-color: $accent-color;
+}
+
+.link:hover::before,
+.link:focus::before {
+   width: 100%;
+}
+
+
+.lang {
+   position: relative;
+   color: $primary-text-color;
+   font-size: 1.25rem;
+   cursor: pointer;
+}
+
+.lang::before {
+   @include before();
+   background-color: $accent-color;
+}
+
+.lang:hover::before,
+.lang:focus::before {
+   width: 100%;
+}
+
+.contactsList {
+   @include flex(center, center);
+   gap: 20px;
+
+}
+
+.contactLink {
+   position: relative;
+   color: $secondary-text-color;
+   font-size: 1.25rem;
+   cursor: pointer;
+}
+
+.contactLink::before {
+   @include before();
+   background-color: $accent-color;
+}
+
+.contactLink:hover::before,
+.contactLink:focus::before {
+   width: 100%;
+}
+
+.contactsList .tel {
+   font-family: $fontFamilyThird;
+}
+
+.icon {
+   transition: $transition;
+}
+
+.icon:hover {
+   transform: scale(1.5);
 }
