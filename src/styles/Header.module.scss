@@ -3,28 +3,42 @@
 
 .container {
    background-color: $primary-bg-color;
-   filter: brightness(150%) saturate(300%);
+   filter: brightness(150%) saturate(100%);
 
    padding-top: 15px;
    padding-bottom: 15px;
 
    a {
       font-family: $fontFamilySecondary;
+      // font-family: var(--fontFamilySecondary);
    }
 
-   @include media(mobile) {}
 
-   @include media(tablet) {}
-
-   @include media(desktop) {}
 }
 
 .wrapper {
-   @include flex(center, center);
-   gap: 40px;
 
    svg {
       display: block;
+   }
+
+
+   @include flex(space-between, center);
+   gap: 10px;
+
+   @include media('tablet') {
+      @include flex(center, center);
+      gap: 10px;
+   }
+
+   @include media('desktopMiddle') {
+      @include flex(center, center);
+      gap: 20px;
+   }
+
+   @include media('desktop') {
+      @include flex(center, center);
+      gap: 40px;
    }
 }
 
@@ -37,20 +51,56 @@
 }
 
 .box {
-   @include flex(space-between, center);
-   flex-grow: 1;
+   @include flex(center, center);
+   flex-direction: column;
+
+
+   @include media('tablet') {
+      @include flex(space-around, center);
+      flex-direction: row;
+      flex-grow: 1;
+   }
+
+   @include media('desktopMiddle') {
+      @include flex(space-around, center);
+      flex-direction: row;
+      flex-grow: 1;
+   }
+
+   @include media('desktop') {
+      @include flex(space-between, center);
+      flex-direction: row;
+      flex-grow: 1;
+   }
 }
 
 .nav ul {
+
    @include flex(center, center);
-   gap: 20px;
+   gap: 10px;
+
+   @include media('tablet') {
+      gap: 20px;
+   }
 }
 
 
 .link {
    position: relative;
    color: $secondary-text-color;
-   font-size: 1.25rem;
+   font-size: 10px;
+
+   @include media('minimob') {
+      font-size: 9px;
+   }
+
+   @include media('tablet') {
+      font-size: 14px;
+   }
+
+   @include media('desktopMiddle') {
+      font-size: 16px;
+   }
 
 }
 
@@ -68,8 +118,20 @@
 .lang {
    position: relative;
    color: $primary-text-color;
-   font-size: 1.25rem;
+   font-size: 10px;
    cursor: pointer;
+
+   @include media('minimob') {
+      font-size: 7px;
+   }
+
+   @include media('tablet') {
+      font-size: 14px;
+   }
+
+   @include media('desktopMiddle') {
+      font-size: 16px;
+   }
 }
 
 .lang::before {
@@ -83,16 +145,41 @@
 }
 
 .contactsList {
+
    @include flex(center, center);
-   gap: 20px;
+   flex-direction: row;
+   gap: 15px;
+
+   @include media('tablet') {
+      @include flex(center, center);
+      flex-direction: column;
+   }
+
+   @include media('desktopMiddle') {
+      @include flex(center, center);
+      flex-direction: row;
+      gap: 20px;
+   }
 
 }
 
 .contactLink {
    position: relative;
    color: $secondary-text-color;
-   font-size: 1.25rem;
+   font-size: 10px;
    cursor: pointer;
+
+   @include media('minimob') {
+      font-size: 7px;
+   }
+
+   @include media('tablet') {
+      font-size: 14px;
+   }
+
+   @include media('desktopMiddle') {
+      font-size: 16px;
+   }
 }
 
 .contactLink::before {
@@ -107,12 +194,24 @@
 
 .contactsList .tel {
    font-family: $fontFamilyThird;
+   // font-family: var(--fontFamilySecondary);
 }
 
 .icon {
    transition: $transition;
+
 }
 
 .icon:hover {
    transform: scale(1.5);
+}
+
+.icon svg {
+   width: 17px;
+   height: 17px;
+
+   @include media('tablet') {
+      width: 20px;
+      height: 20px;
+   }
 }

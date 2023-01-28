@@ -26,6 +26,12 @@
 }
 
 @mixin media($type) {
+   @if $type =='minimob' {
+      @media screen and (max-width: $minimob) {
+         @content;
+      }
+   }
+
    @if $type =='mobile' {
       @media screen and (min-width: $mobile) {
          @content;
@@ -34,6 +40,12 @@
 
    @if $type =='tablet' {
       @media screen and (min-width: $tablet) {
+         @content;
+      }
+   }
+
+   @if $type =='desktopMiddle' {
+      @media screen and (min-width: $desktopMiddle) {
          @content;
       }
    }

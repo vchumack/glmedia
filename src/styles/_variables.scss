@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;700&family=Raleway&family=Red+Hat+Text&display=swap');
 
+$minimob: 320px;
 $mobile: 320px;
 $tablet: 768px;
 $desktopMiddle: 1050px;
@@ -16,9 +17,11 @@ $text-shadow: 0.5px 0.5px 0.5px #4f4f4f;
 $accent-color: #00B6B0;
 $primary-text-color: #FFFFFF;
 $secondary-text-color: #BEA698;
+$third-text-color: #A6E9D7;
 
 
 $hover-color: #00B6B0;
 
 $primary-bg-color: #070707;
 $secondary-bg-color: #344E4D;
+$third-bg-color: #FFFFFF;

@@ -1,7 +1,168 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
 .section {
-   height: 500px;
+   padding-bottom: 50px;
    background: url('/images/whywe.jpg');
    background-position: right;
    background-repeat: no-repeat;
    background-size: cover;
+
+
+}
+
+.wrapper {
+   text-align: center;
+
+   h2 {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 33px;
+      max-width: 360px;
+
+      font-family: $fontFamilyBase;
+      font-size: 30px;
+      line-height: 1.47;
+      letter-spacing: .02em;
+      font-weight: 500;
+
+
+      color: $primary-text-color;
+
+      @include media('tablet') {
+         max-width: 500px;
+         font-size: 40px;
+      }
+
+      @include media('desktopMiddle') {
+         max-width: 650px;
+         font-size: 50px;
+      }
+   }
+}
+
+.box {
+   @include flex(space-between, center);
+   gap: 20px;
+   flex-direction: column;
+   margin-bottom: 50px;
+
+   @include media('tablet') {
+      @include flex(space-between, center);
+      flex-direction: row;
+      gap: 10px;
+      margin-bottom: 120px;
+   }
+}
+
+.secondBox {
+   @include flex(space-between, center);
+   gap: 20px;
+   flex-direction: column-reverse;
+   margin-bottom: 50px;
+
+
+   @include media('tablet') {
+      @include flex(space-around, flex-start);
+      flex-direction: row;
+   }
+}
+
+.photo {
+   width: 360px;
+   height: 280px;
+
+   background-color: $third-bg-color;
+   border-radius: 20px;
+
+
+   @include media('tablet') {
+      width: 450px;
+      height: 300px;
+   }
+
+   @include media('desktopMiddle') {
+      width: 520px;
+      height: 350px;
+   }
+
+   @include media('desktop') {
+      width: 570px;
+      height: 400px;
+   }
+}
+
+.secondPhoto {
+   width: 340px;
+   height: 230px;
+
+   background-color: $third-bg-color;
+   border-radius: 20px;
+
+   @include media('tablet') {
+      width: 300px;
+      height: 200px;
+   }
+
+   @include media('desktopMiddle') {
+      width: 400px;
+      height: 260px;
+   }
+
+   @include media('desktop') {
+      width: 420px;
+      height: 280px;
+   }
+}
+
+.reasons {
+   width: 300px;
+   padding: 15px 20px;
+   background-color: $secondary-bg-color;
+   border-radius: 15px;
+
+   @include media('tablet') {
+      width: 280px;
+
+
+   }
+
+   @include media('desktopMiddle') {
+      width: 400px;
+      padding: 30px 40px;
+   }
+
+   @include media('desktop') {
+      width: 580px;
+   }
+}
+
+.list li {
+   padding: 6px;
+   text-align: left;
+
+   font-family: $fontFamilySecondary;
+
+   @include media('desktopMiddle') {
+      font-size: 18px;
+   }
+
+}
+
+.list li:before {
+   padding-right: 10px;
+   font-weight: bold;
+   color: $third-text-color;
+   content: "\2606";
+   transition-duration: 0.5s;
+}
+
+.list li:hover:before {
+   color: $hover-color;
+   content: "\2605";
+}
+
+.accentText {
+   font-weight: bold;
+   // font-family: $fontFamilyBase;
 }
