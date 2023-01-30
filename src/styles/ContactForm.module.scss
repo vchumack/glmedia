@@ -1,5 +1,138 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+@include media('minimob') {}
+
+@include media('tablet') {}
+
+@include media('desktopMiddle') {}
+
+@include media('desktop') {}
+
 .section {
-   height: 500px;
+   // height: 600px;
+   padding: 50px 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
    background: linear-gradient(to right, #9A7F5C 5%, #eace9e 50%, #ddbe86 95%);
 
+}
+
+.wrapper {
+   // @include wrapperTitle();
+
+   // position: absolute;
+   // top: 345%;
+   // left: 50%;
+   max-width: 500px;
+   padding: 40px;
+   // transform: translate(-50%, -50%);
+   background-color: #E4E0D3;
+   box-shadow: 0 15px 25px rgba(124, 213, 236, 0.7);
+   border-radius: 10px;
+}
+
+.userBox {
+   position: relative;
+   // outline: 1px red solid;
+   margin-bottom: 30px;
+
+   input:focus~label,
+   input:valid~label {
+      // position: relative;
+      top: 0;
+      // left: 0;
+      color: #7cdfec;
+      font-size: 12px;
+   }
+
+   // input:invalid~label {
+   //    top: 0;
+   //    color: #db1313;
+   //    font-size: 12px;
+   // }
+
+   input:not(:empty)~label {
+      top: 0;
+   }
+}
+
+.wrapper .userBox input {
+   // position: relative;
+   width: 100%;
+   padding: 10px 0;
+   font-size: 16px;
+   color: #fff;
+
+   border: none;
+   border-bottom: 1px solid #fff;
+   outline: none;
+   background-color: transparent;
+
+   // &:focus+label {
+   //    top: 0;
+   //    color: #7cdfec;
+   //    font-size: 12px;
+   // }
+}
+
+.wrapper .userBox label {
+   position: absolute;
+   left: 0;
+   top: 50%;
+   transform: translateY(-50%);
+   // padding: 10px 0;
+   font-size: 16px;
+   color: #fff;
+   pointer-events: none;
+   transition: .5s;
+}
+
+// .wrapper .userBox input:focus label,
+// .wrapper .userBox input:valid label {
+
+
+
+
+.submit {
+   padding: 10px 20px;
+   color: #cbbddb;
+   font-size: 16px;
+   text-decoration: none;
+   text-transform: uppercase;
+   overflow: hidden;
+   transition: .5s;
+   letter-spacing: 4px;
+   border: 1px solid #7cdbec;
+   cursor: pointer;
+
+}
+
+.submit:hover {
+   background-color: #7cdbec;
+   color: #fff;
+   border-radius: 5px;
+   box-shadow: 0 0 5px #7cbfec, 0 0 25px #7cbfec, 0 0 50px #7cbfec, 0 0 100px #7cbfec;
+}
+
+.btnForm {
+   display: flex;
+   flex-direction: row;
+   margin-top: 20px;
+}
+
+.confident {
+   font-size: 14px;
+   text-decoration: none;
+   color: #cbbdd8;
+   margin: auto;
+   width: 68%;
+   text-align: center;
+}
+
+.confident a {
+   margin: auto;
+   text-decoration: none;
+   color: #7cbfec;
 }

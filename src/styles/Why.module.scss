@@ -12,43 +12,48 @@
 }
 
 .wrapper {
-   text-align: center;
 
-   h2 {
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 33px;
-      max-width: 360px;
+   @include wrapperTitle();
+   // text-align: center;
 
-      font-family: $fontFamilyBase;
-      font-size: 30px;
-      line-height: 1.47;
-      letter-spacing: .02em;
-      font-weight: 500;
+   // h2 {
+   //    margin-left: auto;
+   //    margin-right: auto;
+   //    margin-bottom: 33px;
+   //    max-width: 360px;
+
+   //    font-family: $fontFamilyBase;
+   //    font-size: 30px;
+   //    line-height: 1.47;
+   //    letter-spacing: .02em;
+   //    font-weight: 500;
 
 
-      color: $primary-text-color;
+   //    color: $primary-text-color;
 
-      @include media('tablet') {
-         max-width: 500px;
-         font-size: 40px;
-      }
+   //    @include media('tablet') {
+   //       max-width: 500px;
+   //       font-size: 40px;
+   //    }
 
-      @include media('desktopMiddle') {
-         max-width: 650px;
-         font-size: 50px;
-      }
-   }
+   //    @include media('desktopMiddle') {
+   //       max-width: 650px;
+   //       font-size: 50px;
+   //    }
+   // }
 }
 
 .box {
-   @include flex(space-between, center);
+   @include flex(space-around, center);
+
    gap: 20px;
    flex-direction: column;
    margin-bottom: 50px;
 
+   // overflow: hidden;
+
    @include media('tablet') {
-      @include flex(space-between, center);
+      @include flex(space-around, flex-start);
       flex-direction: row;
       gap: 10px;
       margin-bottom: 120px;
@@ -69,51 +74,117 @@
 }
 
 .photo {
-   width: 360px;
-   height: 280px;
 
-   background-color: $third-bg-color;
    border-radius: 20px;
 
+   transition: $transition;
 
    @include media('tablet') {
       width: 450px;
+      overflow: hidden;
+   }
+
+   @include media('desktopMiddle') {
+      // margin-top: -60px;
+      width: 520px;
+      overflow: hidden;
+   }
+
+   @include media('desktop') {
+      width: 650px;
+      // height: 433px;
+      overflow: hidden;
+   }
+}
+
+.photo:hover {
+   transform: scale(1.05)
+}
+
+.photo img {
+   // width: 350px;
+   // min-width: 320px;
+   width: 100%;
+   height: 233px;
+   object-fit: cover;
+
+   background-color: $third-bg-color;
+   // border-radius: 20px;
+
+
+   @include media('tablet') {
+      // width: 450px;
       height: 300px;
    }
 
    @include media('desktopMiddle') {
-      width: 520px;
-      height: 350px;
+      // width: 520px;
+      height: 347px;
    }
 
    @include media('desktop') {
-      width: 570px;
-      height: 400px;
+      // width: 650px;
+      height: 433px;
    }
 }
 
-.secondPhoto {
-   width: 340px;
-   height: 230px;
 
-   background-color: $third-bg-color;
+
+.secondPhoto {
    border-radius: 20px;
 
+   transition: $transition;
+
    @include media('tablet') {
-      width: 300px;
-      height: 200px;
+      width: 280px;
+      overflow: hidden;
    }
 
    @include media('desktopMiddle') {
+      // margin-top: -60px;
       width: 400px;
-      height: 260px;
+      overflow: hidden;
+   }
+
+
+   @include media('desktop') {
+      margin-top: -210px;
+      width: 500px;
+      overflow: hidden;
+   }
+}
+
+.secondPhoto:hover {
+   transform: scale(1.05)
+}
+
+.secondPhoto img {
+   // width: 340px;
+   width: 100%;
+   height: 230px;
+   object-fit: cover;
+
+   background-color: $third-bg-color;
+   // border-radius: 20px;
+
+   @include media('tablet') {
+      // width: 300px;
+      height: 400px;
+   }
+
+   @include media('desktopMiddle') {
+      // width: 400px;
+      height: 530px;
    }
 
    @include media('desktop') {
-      width: 420px;
-      height: 280px;
+      // width: 420px;
+      // height: 100%;
+      height: 660px;
    }
 }
+
+
 
 .reasons {
    width: 300px;
@@ -123,8 +194,6 @@
 
    @include media('tablet') {
       width: 280px;
-
-
    }
 
    @include media('desktopMiddle') {
@@ -133,7 +202,27 @@
    }
 
    @include media('desktop') {
-      width: 580px;
+      width: 500px;
+   }
+}
+
+.secondReasons {
+   width: 300px;
+   padding: 15px 20px;
+   background-color: $secondary-bg-color;
+   border-radius: 15px;
+
+   @include media('tablet') {
+      width: 450px;
+   }
+
+   @include media('desktopMiddle') {
+      width: 520px;
+      padding: 30px 40px;
+   }
+
+   @include media('desktop') {
+      width: 650px;
    }
 }
 
