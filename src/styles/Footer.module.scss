@@ -1,0 +1,111 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.footer {
+   padding: 50px 0;
+}
+
+// .wrapper {
+
+// @include flex(space-between, center);
+// gap: 10px;
+
+// @include media('tablet') {
+//    @include flex(center, center);
+//    gap: 10px;
+// }
+
+// @include media('desktopMiddle') {
+//    @include flex(center, center);
+//    gap: 20px;
+// }
+
+// @include media('desktop') {
+//    @include flex(center, center);
+//    gap: 40px;
+// }
+// }
+
+.row {
+   @include flex();
+   flex-wrap: wrap;
+   //    margin-right: -15px;
+   //    margin-left: -15px;
+}
+
+.col {
+   flex: 0 0 100%;
+   max-width: 100%;
+   margin-bottom: 10px;
+
+   text-align: center;
+
+   @include media('tablet') {
+      flex: 0 0 50%;
+      max-width: 50%;
+   }
+
+   @include media('desktopMiddle') {
+      flex: 0 0 33%;
+      max-width: 33%;
+   }
+
+   @include media('desktop') {
+      flex: 0 0 33%;
+      max-width: 33%;
+   }
+
+   h3 {
+      margin-bottom: 10px;
+   }
+}
+
+.contactLink {
+   position: relative;
+   color: $secondary-text-color;
+   font-size: 16px;
+   cursor: pointer;
+
+}
+
+.contactLink:not(:last-child) {
+   margin-right: 10px;
+}
+
+.contactLink::before {
+   @include before();
+   background-color: $accent-color;
+}
+
+.contactLink:hover::before,
+.contactLink:focus::before {
+   width: 100%;
+}
+
+.copywright {
+   margin-top: 50px;
+   text-align: center;
+}
+
+.iconBox {
+   @include flex(center, center);
+   gap: 20px;
+}
+
+.icon {
+   transition: $transition;
+}
+
+.icon:hover {
+   transform: scale(1.5);
+}
+
+.icon svg {
+   width: 17px;
+   height: 17px;
+
+   @include media('tablet') {
+      width: 20px;
+      height: 20px;
+   }
+}

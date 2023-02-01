@@ -1,0 +1,22 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.section {
+   padding: 50px 0;
+   @include flex(center, center);
+
+   h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: $fourth-text-color;
+   }
+
+   p {
+      margin-bottom: 10px;
+   }
+
+   a {
+      color: $fourth-text-color;
+      text-decoration: underline;
+   }
+}
