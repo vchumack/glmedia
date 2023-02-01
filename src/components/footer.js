@@ -17,9 +17,9 @@ const Footer = () => {
             </a>
             <a
               className={`${s.contactLink} ${s.tel}`}
-              href="tel:+380 93 560 44 06"
+              href="tel:+380 98 866 22 13"
             >
-              +380 93 560 44 06
+              +380 98 866 22 13
             </a>
           </div>
           <div className={s.col}>
