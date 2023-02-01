@@ -4,7 +4,7 @@ import { BsInstagram, BsTelegram, BsLinkedin } from "react-icons/bs";
 import s from "@/styles/Footer.module.scss";
 const Footer = () => {
   return (
-    <footer className={s.footer}>
+    <footer id="contacts" className={s.footer}>
       <div className={`${s.wrapper} wrapper`}>
         <div className={s.row}>
           <div className={s.col}>
@@ -49,6 +49,7 @@ const Footer = () => {
             </div>
           </div>
           <div className={s.col}>
+            <h3>Наша пошта</h3>
             <a className={s.contactLink} href="mailto:group@glmedia.org">
               group@glmedia.org
             </a>

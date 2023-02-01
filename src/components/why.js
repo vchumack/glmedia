@@ -2,7 +2,7 @@ import s from "@/styles/Why.module.scss";
 
 const Why = () => {
   return (
-    <section className={s.section}>
+    <section id="why" className={s.section}>
       <div className={`${s.wrapper} wrapper`}>
         <h2>Чому ми?</h2>
 
