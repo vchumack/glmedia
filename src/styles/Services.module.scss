@@ -13,33 +13,11 @@
 .wrapper {
 
    @include wrapperTitle();
-   // text-align: center;
 
-   // h2 {
-   //    margin-left: auto;
-   //    margin-right: auto;
-   //    margin-bottom: 33px;
-   //    max-width: 360px;
+   h2 {
+      font-family: var(--fontFamilyBase);
+   }
 
-   //    font-family: $fontFamilyBase;
-   //    font-size: 30px;
-   //    line-height: 1.47;
-   //    letter-spacing: .02em;
-   //    font-weight: 500;
-
-
-   //    color: $primary-text-color;
-
-   //    @include media('tablet') {
-   //       max-width: 500px;
-   //       font-size: 40px;
-   //    }
-
-   //    @include media('desktopMiddle') {
-   //       max-width: 650px;
-   //       font-size: 50px;
-   //    }
-   // }
 }
 
 .box {
@@ -85,7 +63,7 @@
 }
 
 .title {
-   font-family: $fontFamilySecondary;
+   font-family: var(--fontFamilySecondary);
    font-size: 16px;
    color: $fourth-text-color;
 
@@ -98,7 +76,7 @@
 
    // color: $secondary-text-color;
 
-   font-family: $fontFamilySecondary;
+   font-family: var(--fontFamilySecondary);
    font-weight: 700;
    font-size: 16px;
 
@@ -116,19 +94,14 @@
 //    width: 100%;
 // }
 
-.insidePrice {
-   font-family: $fontFamilySecondary;
-   font-weight: 700;
-   font-size: 16px;
-   color: $secondary-text-color;
-}
+
 
 
 .list li {
    padding: 6px;
    text-align: left;
    font-size: 14px;
-   font-family: $fontFamilySecondary;
+   font-family: var(--fontFamilySecondary);
    color: $fourth-text-color;
 
    // @include media('desktopMiddle') {
@@ -150,9 +123,17 @@
    content: "\2605";
 }
 
+.insidePrice {
+   // font-family: $fontFamilySecondary;
+   font-weight: 700;
+   font-size: 16px;
+   color: $secondary-text-color;
+}
+
 .description {
    @include flex();
    padding: 20px;
 
-   font-family: $fontFamilySecondary;
+   font-family: var(--fontFamilySecondary);
+
 }

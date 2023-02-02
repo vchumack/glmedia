@@ -1,8 +1,16 @@
+import { Raleway, Fira_Sans_Extra_Condensed } from "@next/font/google";
+
 import s from "@/styles/PrivacyPolicy.module.scss";
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--fontFamilySecondary",
+});
+
 const privacyPolicy = () => {
   return (
     <section className={s.section}>
-      <div className="wrapper">
+      <div className={` wrapper ${raleway.variable}`}>
         <h2>ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</h2>
         <p>
           Цей документ описує політику конфіденційності для сайту{" "}

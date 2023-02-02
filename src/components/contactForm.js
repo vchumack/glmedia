@@ -1,9 +1,21 @@
+import { Raleway, Fira_Sans_Extra_Condensed } from "@next/font/google";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { HiOutlineHeart } from "react-icons/hi";
 import { Oval } from "react-loader-spinner";
 import s from "@/styles/ContactForm.module.scss";
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--fontFamilySecondary",
+});
+
+const fira = Fira_Sans_Extra_Condensed({
+  subsets: ["latin"],
+  variable: "--fontFamilyBase",
+  weight: ["400", "700"],
+});
 
 const ContactForm = () => {
   const [isSubmit, setIsSubmit] = useState(false);
@@ -22,7 +34,7 @@ const ContactForm = () => {
     setIsLoading(true);
 
     try {
-      console.log(data);
+      // console.log(data);
       await axios.post(
         "https://sheet.best/api/sheets/8e3a48aa-d794-45df-b76c-96f5c9cb843e",
         data
@@ -63,7 +75,7 @@ const ContactForm = () => {
   }
 
   return (
-    <section className={s.section}>
+    <section className={`${s.section} ${raleway.variable} ${fira.variable}`}>
       <div className="wrapper">
         <div className={s.wrapper}>
           {!isSubmit ? (

@@ -9,8 +9,9 @@
    padding-bottom: 15px;
 
    a {
-      font-family: $fontFamilySecondary;
-      // font-family: var(--fontFamilySecondary);
+      // font-family: $fontFamilySecondary;
+      font-family: var(--fontFamilySecondary);
+
    }
 }
 
@@ -191,8 +192,8 @@
 }
 
 .contactsList .tel {
-   font-family: $fontFamilyThird;
-   // font-family: var(--fontFamilySecondary);
+   // font-family: $fontFamilyThird;
+   font-family: var(--fontFamilyThird);
 }
 
 .icon {

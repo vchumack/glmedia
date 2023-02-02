@@ -34,7 +34,8 @@
       margin-bottom: 33px;
       max-width: 360px;
 
-      font-family: $fontFamilyBase;
+      // font-family: $fontFamilyBase;
+      // font-family: var(--fontFamilyBase);
       font-size: 30px;
       line-height: 1.47;
       letter-spacing: .02em;

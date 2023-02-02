@@ -20,6 +20,10 @@
 
 .title {
    margin-bottom: 30px;
+
+   font-family: var(--fontFamilyBase);
+   line-height: 1.14;
+   letter-spacing: 0.5px;
 }
 
 .error {
@@ -33,6 +37,7 @@
 
       color: $error-text-color;
       font-size: 12px;
+      font-family: var(--fontFamilySecondary);
 
    }
 }
@@ -83,7 +88,8 @@
    transform: translateY(-50%);
    transition: $transition;
 
-   font-size: 18px;
+   font-size: 16px;
+   font-family: var(--fontFamilySecondary);
 }
 
 // .wrapper .userBox input {
@@ -104,23 +110,28 @@
    padding: 10px 20px;
 
    color: $secondary-text-color;
+
+   font-family: var(--fontFamilyBase);
+   line-height: 1.14;
+   letter-spacing: 0.5px;
    font-size: 14px;
-   text-decoration: none;
-   text-transform: uppercase;
-   letter-spacing: 2px;
+   font-weight: bold;
+
    border: 1px solid $secondary-text-color;
+
+   border-radius: 10px;
    overflow: hidden;
    cursor: pointer;
    transition: .5s;
 
 }
 
-// .submit:hover {
-//    background-color: $secondary-text-color;
-//    color: #fff;
-//    border-radius: 5px;
-//    box-shadow: 0 0 5px $secondary-text-color, 0 0 25px $secondary-text-color, 0 0 50px $secondary-text-color, 0 0 100px $secondary-text-color;
-// }
+.submit:active {
+   background-color: $secondary-text-color;
+   color: #fff;
+   border-radius: 5px;
+   box-shadow: rgba(93, 62, 50, 0.25) 0px 13px 27px -5px, rgba(41, 16, 16, 0.3) 0px 8px 16px -8px;
+}
 
 .btnForm {
    text-align: center;
@@ -146,6 +157,7 @@
    margin: auto;
    width: 68%;
 
+   font-family: var(--fontFamilyBase);
    font-size: 14px;
    text-decoration: none;
    color: $secondary-text-color;
@@ -156,15 +168,15 @@
       text-decoration: none;
       color: $accent-color;
    }
+
+   @include media('tablet') {
+      width: 50%;
+   }
 }
 
-// .confident a {
-//    margin: auto;
-//    text-decoration: none;
-//    color: $accent-color;
-// }
 
 .successSubmit {
+   font-family: var(--fontFamilyBase);
    font-size: 18px;
    text-align: center;
 
@@ -182,7 +194,3 @@
    @include flex(center);
 
 }
-
-// .successSubmit a {
-//    color: $accent-color;
-// }

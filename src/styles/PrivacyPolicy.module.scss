@@ -9,14 +9,17 @@
       margin-bottom: 20px;
       text-align: center;
       color: $fourth-text-color;
+      font-family: var(--fontFamilySecondary);
    }
 
    p {
       margin-bottom: 10px;
+      font-family: var(--fontFamilySecondary);
    }
 
    a {
       color: $fourth-text-color;
       text-decoration: underline;
+      line-height: 1.20;
    }
 }

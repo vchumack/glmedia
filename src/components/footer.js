@@ -1,11 +1,25 @@
 import Link from "next/link";
+import { Raleway, Red_Hat_Text } from "@next/font/google";
 import { BsInstagram, BsTelegram, BsLinkedin } from "react-icons/bs";
 
 import s from "@/styles/Footer.module.scss";
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--fontFamilySecondary",
+});
+
+const redHat = Red_Hat_Text({
+  subsets: ["latin"],
+  variable: "--fontFamilyThird",
+});
+
 const Footer = () => {
   return (
     <footer id="contacts" className={s.footer}>
-      <div className={`${s.wrapper} wrapper`}>
+      <div
+        className={`${s.wrapper} wrapper ${raleway.variable} ${redHat.variable}`}
+      >
         <div className={s.row}>
           <div className={s.col}>
             <h3>Наші контакти</h3>

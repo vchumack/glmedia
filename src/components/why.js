@@ -1,14 +1,38 @@
+import { Raleway, Fira_Sans_Extra_Condensed } from "@next/font/google";
+import Image from "next/image";
+import teamOneSrc from "../../public/images/7395.webp";
+import teamTwoSrc from "../../public/images/7643.jpg";
+// import teamTwoSrc from "../../public/images/7643.webp";
+
 import s from "@/styles/Why.module.scss";
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--fontFamilySecondary",
+});
+
+const fira = Fira_Sans_Extra_Condensed({
+  subsets: ["latin"],
+  variable: "--fontFamilyBase",
+  weight: ["400", "700"],
+});
 
 const Why = () => {
   return (
     <section id="why" className={s.section}>
-      <div className={`${s.wrapper} wrapper`}>
+      <div
+        className={`${s.wrapper} wrapper ${raleway.variable} ${fira.variable}`}
+      >
         <h2>Чому ми?</h2>
 
         <div className={s.box}>
           <div className={s.photo}>
-            <img src="./images/7395.jpg" alt="marketers work in the office" />
+            <Image
+              src={teamOneSrc}
+              width={650}
+              height={433}
+              alt="marketers work in the office"
+            />
           </div>
 
           <div className={s.reasons}>
@@ -55,7 +79,12 @@ const Why = () => {
           </div>
 
           <div className={s.secondPhoto}>
-            <img src="./images/7643.jpg" alt="marketers work in the office" />
+            <Image
+              src={teamTwoSrc}
+              width={420}
+              height={660}
+              alt="marketers work in the office"
+            />
           </div>
         </div>
         <div>

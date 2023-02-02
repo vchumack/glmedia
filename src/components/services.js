@@ -1,9 +1,23 @@
+import { Raleway, Fira_Sans_Extra_Condensed } from "@next/font/google";
 import s from "@/styles/Services.module.scss";
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--fontFamilySecondary",
+});
+
+const fira = Fira_Sans_Extra_Condensed({
+  subsets: ["latin"],
+  variable: "--fontFamilyBase",
+  weight: ["400", "700"],
+});
 
 const Services = () => {
   return (
     <section id="services" className={s.section}>
-      <div className={`${s.wrapper} wrapper`}>
+      <div
+        className={`${s.wrapper} wrapper ${raleway.variable} ${fira.variable}`}
+      >
         <h2>Наші послуги</h2>
         <ul className={s.box}>
           <li className={s.boxItem}>

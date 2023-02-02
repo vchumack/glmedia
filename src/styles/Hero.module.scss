@@ -1,15 +1,6 @@
 @import "@/styles/variables.scss";
 @import "@/styles/mixins.scss";
 
-
-@include media('minimob') {}
-
-@include media('tablet') {}
-
-@include media('desktopMiddle') {}
-
-@include media('desktop') {}
-
 .section {
    height: 300px;
    padding-top: 75px;
@@ -43,7 +34,8 @@
       margin-right: auto;
       max-width: 360px;
 
-      font-family: $fontFamilyBase;
+      // font-family: $fontFamilyBase;
+      font-family: var(--fontFamilyBase);
       font-size: 30px;
       line-height: 1.47;
       letter-spacing: .02em;
@@ -63,7 +55,7 @@
    }
 
    p {
-
+      font-family: var(--fontFamilySecondary);
       font-size: 18px;
 
       @include media('tablet') {

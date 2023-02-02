@@ -1,13 +1,26 @@
 import Link from "next/link";
+import { Raleway, Red_Hat_Text } from "@next/font/google";
 import Image from "next/image";
 import { BsInstagram } from "react-icons/bs";
 import { navList } from "@/data/navList";
 import s from "@/styles/Header.module.scss";
 
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--fontFamilySecondary",
+});
+
+const redHat = Red_Hat_Text({
+  subsets: ["latin"],
+  variable: "--fontFamilyThird",
+});
+
 const Header = () => {
   return (
     <header className={s.container}>
-      <div className={`${s.wrapper} wrapper`}>
+      <div
+        className={`${s.wrapper} wrapper ${raleway.variable} ${redHat.variable}`}
+      >
         <Link href="/">
           <Image
             src="/images/logoBeige.png"

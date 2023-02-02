@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;700&family=Raleway&family=Red+Hat+Text&display=swap');
 @import "@/styles/variables.scss";
 
 body {
   background-color: $primary-bg-color;
+  // background-color: var(--primary-bg-color);
+
   color: $secondary-text-color;
-  font-family: $fontFamilyBase;
+
   font-weight: 400;
 
   /* Выставляем основные настройки по-умолчанию для body */
