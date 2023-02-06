@@ -73,10 +73,15 @@
    }
 }
 
+.nav {
+   margin-bottom: 15px;
+}
+
 .nav ul {
 
    @include flex(center, center);
    gap: 10px;
+   flex-wrap: wrap;
 
    @include media('tablet') {
       gap: 20px;
@@ -87,11 +92,11 @@
 .link {
    position: relative;
    color: $secondary-text-color;
-   font-size: 10px;
+   font-size: 16px;
 
-   @include media('minimob') {
-      font-size: 9px;
-   }
+   // @include media('minimob') {
+   //    font-size: 9px;
+   // }
 
    @include media('tablet') {
       font-size: 14px;
@@ -113,20 +118,24 @@
    width: 100%;
 }
 
+.boxLang {
+   margin-bottom: 15px;
+}
 
 .lang {
    position: relative;
    color: $primary-text-color;
-   font-size: 10px;
+   // font-size: 10px;
+   font-size: 14px;
    cursor: pointer;
 
-   @include media('minimob') {
-      font-size: 7px;
-   }
+   // @include media('minimob') {
+   //    font-size: 7px;
+   // }
 
-   @include media('tablet') {
-      font-size: 14px;
-   }
+   // @include media('tablet') {
+   //    font-size: 14px;
+   // }
 
    @include media('desktopMiddle') {
       font-size: 16px;
@@ -147,6 +156,7 @@
 
    @include flex(center, center);
    flex-direction: row;
+   flex-wrap: wrap;
    gap: 15px;
 
    @include media('tablet') {
@@ -165,7 +175,8 @@
 .contactLink {
    position: relative;
    color: $secondary-text-color;
-   font-size: 10px;
+   // font-size: 10px;
+   font-size: 14px;
    cursor: pointer;
 
    @include media('minimob') {
@@ -206,8 +217,9 @@
 }
 
 .icon svg {
-   width: 17px;
-   height: 17px;
+
+   width: 25px;
+   height: 25px;
 
    @include media('tablet') {
       width: 20px;

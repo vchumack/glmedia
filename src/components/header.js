@@ -43,7 +43,7 @@ const Header = () => {
             </ul>
           </nav>
 
-          <div>
+          <div className={s.boxLang}>
             <a className={s.lang}>UA</a>
             <span> | </span>
             <a className={s.lang}>EN</a>
