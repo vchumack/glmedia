@@ -133,6 +133,14 @@
    box-shadow: rgba(93, 62, 50, 0.25) 0px 13px 27px -5px, rgba(41, 16, 16, 0.3) 0px 8px 16px -8px;
 }
 
+
+.submit:hover {
+   background-color: $secondary-text-color;
+   color: #fff;
+   border-radius: 5px;
+   // box-shadow: rgba(93, 62, 50, 0.25) 0px 13px 27px -5px, rgba(41, 16, 16, 0.3) 0px 8px 16px -8px;
+}
+
 .btnForm {
    text-align: center;
 

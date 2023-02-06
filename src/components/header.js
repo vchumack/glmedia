@@ -35,7 +35,7 @@ const Header = () => {
             <ul>
               {navList.map(({ title, path }, idx) => (
                 <li key={idx}>
-                  <Link className={s.link} href={path}>
+                  <Link className={s.link} href={path} scroll={false}>
                     {title}
                   </Link>
                 </li>

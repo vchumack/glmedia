@@ -1,5 +1,9 @@
 @import "@/styles/variables.scss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $primary-bg-color;
   // background-color: var(--primary-bg-color);
@@ -10,9 +14,11 @@ body {
 
   /* Выставляем основные настройки по-умолчанию для body */
   min-height: 100vh;
-  scroll-behavior: smooth;
+
+
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
 
 }
 

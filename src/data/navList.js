@@ -5,14 +5,14 @@ export const navList = [
   },
   {
     title: "Чому ми?",
-    path: "/#why",
+    path: "#why",
   },
   {
     title: "Послуги",
-    path: "/#services",
+    path: "#services",
   },
   {
     title: "Контакти",
-    path: "/#contacts",
+    path: "#contacts",
   },
 ];
