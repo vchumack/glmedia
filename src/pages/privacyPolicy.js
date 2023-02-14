@@ -14,10 +14,7 @@ const privacyPolicy = () => {
         <h2>ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</h2>
         <p>
           Цей документ описує політику конфіденційності для сайту{" "}
-          <a
-            href="https://glmedia-git-main-vchumack.vercel.app/"
-            target="_blank"
-          >
+          <a href="https://www.glmedia.org/" target="_blank">
             GL Media
           </a>{" "}
           (далі – Сайт) діджитал студії GL Media. У цьому документі
