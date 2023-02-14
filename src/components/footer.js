@@ -55,7 +55,7 @@ const Footer = () => {
               </Link>
               <Link
                 className={s.icon}
-                href="https://www.instagram.com/gl.media/"
+                href="https://www.linkedin.com/in/gevorg-sarkisyan-23b072134"
                 target="_blank"
               >
                 <BsLinkedin />

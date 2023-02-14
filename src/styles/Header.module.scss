@@ -1,12 +1,26 @@
 @import "@/styles/variables.scss";
 @import "@/styles/mixins.scss";
 
+
+
 .container {
+   position: fixed;
+   width: 100%;
+   z-index: 50;
    background-color: $primary-bg-color;
    filter: brightness(150%) saturate(100%);
+   padding-top: 10px;
+   padding-bottom: 10px;
 
-   padding-top: 15px;
-   padding-bottom: 15px;
+
+   @include media('tablet') {
+      position: relative;
+      // background-color: $primary-bg-color;
+      // filter: brightness(150%) saturate(100%);
+      padding-top: 15px;
+      padding-bottom: 15px;
+
+   }
 
    a {
       // font-family: $fontFamilySecondary;
@@ -43,6 +57,7 @@
 
 .logo {
    transition: $transition;
+   display: block;
 }
 
 .logo:hover {
@@ -50,14 +65,26 @@
 }
 
 .box {
-   @include flex(center, center);
+   @include flex(space-evenly, center);
    flex-direction: column;
-
+   position: fixed;
+   left: -100%;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100vh;
+   background-color: $primary-bg-color;
+   z-index: 10;
+   transition: left 1s;
 
    @include media('tablet') {
       @include flex(space-around, center);
       flex-direction: row;
       flex-grow: 1;
+      position: static;
+      width: 0;
+      height: 0;
    }
 
    @include media('desktopMiddle') {
@@ -73,17 +100,27 @@
    }
 }
 
-.nav {
-   margin-bottom: 15px;
+.activeMobMenu {
+   left: 0;
 }
 
-.nav ul {
+// .nav {
+//    @include media('tablet') {
+//       margin-bottom: 15px;
+//    }
+// }
 
-   @include flex(center, center);
-   gap: 10px;
-   flex-wrap: wrap;
+.nav ul {
+   @include flex(_, center);
+   flex-direction: column;
+   gap: 30px;
+
 
    @include media('tablet') {
+      @include flex(center, center);
+      flex-direction: row;
+      gap: 10px;
+      flex-wrap: wrap;
       gap: 20px;
    }
 }
@@ -92,7 +129,7 @@
 .link {
    position: relative;
    color: $secondary-text-color;
-   font-size: 16px;
+   font-size: 25px;
 
    // @include media('minimob') {
    //    font-size: 9px;
@@ -118,24 +155,42 @@
    width: 100%;
 }
 
-.boxLang {
-   margin-bottom: 15px;
+.boxLangMob {
+   display: flex;
+   gap: 20px;
+   font-size: 20px;
+
+   @include media('tablet') {
+      display: none;
+   }
 }
+
+.boxLang {
+   display: none;
+
+   @include media('tablet') {
+      display: block;
+      // margin-bottom: 15px;
+   }
+
+}
+
+
 
 .lang {
    position: relative;
    color: $primary-text-color;
    // font-size: 10px;
-   font-size: 14px;
+   font-size: 20px;
    cursor: pointer;
 
    // @include media('minimob') {
    //    font-size: 7px;
    // }
 
-   // @include media('tablet') {
-   //    font-size: 14px;
-   // }
+   @include media('tablet') {
+      font-size: 14px;
+   }
 
    @include media('desktopMiddle') {
       font-size: 16px;
@@ -154,14 +209,20 @@
 
 .contactsList {
 
-   @include flex(center, center);
-   flex-direction: row;
-   flex-wrap: wrap;
+   // @include flex(center, center);
+   // flex-direction: row;
+   // flex-wrap: wrap;
+   @include flex();
+   flex-direction: column;
    gap: 15px;
+
+
 
    @include media('tablet') {
       @include flex(center, center);
       flex-direction: column;
+      gap: 5px;
+
    }
 
    @include media('desktopMiddle') {
@@ -175,13 +236,10 @@
 .contactLink {
    position: relative;
    color: $secondary-text-color;
-   // font-size: 10px;
-   font-size: 14px;
+   font-size: 16px;
    cursor: pointer;
 
-   @include media('minimob') {
-      font-size: 7px;
-   }
+
 
    @include media('tablet') {
       font-size: 14px;
@@ -207,9 +265,26 @@
    font-family: var(--fontFamilyThird);
 }
 
-.icon {
-   transition: $transition;
 
+
+.iconMob svg {
+   display: block;
+   width: 40px;
+   height: 40px;
+
+   @include media('tablet') {
+      display: none;
+   }
+
+}
+
+.icon {
+   display: none;
+
+   @include media('tablet') {
+      display: block;
+      transition: $transition;
+   }
 }
 
 .icon:hover {
@@ -224,5 +299,19 @@
    @include media('tablet') {
       width: 20px;
       height: 20px;
+   }
+}
+
+.mobileBtn {
+   display: flex;
+   position: absolute;
+   top: 21px;
+   right: 25px;
+   cursor: pointer;
+   z-index: 10;
+
+
+   @include media('tablet') {
+      display: none;
    }
 }

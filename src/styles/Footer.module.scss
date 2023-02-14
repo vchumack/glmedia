@@ -13,18 +13,20 @@
 .col {
    flex: 0 0 100%;
    max-width: 100%;
-   margin-bottom: 10px;
+   margin-bottom: 30px;
 
    text-align: center;
 
    @include media('tablet') {
       flex: 0 0 50%;
       max-width: 50%;
+      margin-bottom: 20px;
    }
 
    @include media('desktopMiddle') {
       flex: 0 0 33%;
       max-width: 33%;
+      margin-bottom: 0;
    }
 
    @include media('desktop') {
@@ -43,7 +45,7 @@
    color: $secondary-text-color;
 
    font-family: var(--fontFamilySecondary);
-   font-size: 16px;
+   font-size: 18px;
    cursor: pointer;
 
 }
@@ -87,11 +89,16 @@
 }
 
 .icon svg {
-   width: 17px;
-   height: 17px;
+   width: 30px;
+   height: 30px;
 
-   @include media('tablet') {
-      width: 20px;
-      height: 20px;
+   // @include media('tablet') {
+   //    width: 30px;
+   //    height: 30px;
+   // }
+
+   @include media('desktopMiddle') {
+      width: 25px;
+      height: 25px;
    }
 }

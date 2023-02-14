@@ -2,8 +2,10 @@ import Link from "next/link";
 import { Raleway, Red_Hat_Text } from "@next/font/google";
 import Image from "next/image";
 import { BsInstagram } from "react-icons/bs";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { navList } from "@/data/navList";
 import s from "@/styles/Header.module.scss";
+import { useEffect, useState } from "react";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -16,6 +18,22 @@ const redHat = Red_Hat_Text({
 });
 
 const Header = () => {
+  const [isOpenMobMenu, setIsOpenMobMenu] = useState(false);
+
+  useEffect(() => {
+    if (isOpenMobMenu) {
+      document.body.classList.add("isOpenMenu");
+    } else {
+      document.body.classList.remove("isOpenMenu");
+    }
+  }, [isOpenMobMenu]);
+
+  const handleMobMenuClick = () => {
+    // if (document.body.classList.contains("isOpenMenu")) {
+    // }
+    setIsOpenMobMenu(!isOpenMobMenu);
+  };
+
   return (
     <header className={s.container}>
       <div
@@ -30,12 +48,28 @@ const Header = () => {
             className={s.logo}
           />
         </Link>
-        <div className={s.box}>
+
+        <div
+          className={
+            isOpenMobMenu ? [s.box, s.activeMobMenu].join(" ") : [s.box]
+          }
+        >
+          {/* <div className={s.boxLangMob}>
+            <a className={s.lang}>UA</a>
+            <span> | </span>
+            <a className={s.lang}>EN</a>
+          </div> */}
+
           <nav className={s.nav}>
             <ul>
               {navList.map(({ title, path }, idx) => (
                 <li key={idx}>
-                  <Link className={s.link} href={path} scroll={false}>
+                  <Link
+                    className={s.link}
+                    href={path}
+                    scroll={false}
+                    onClick={() => setIsOpenMobMenu(false)}
+                  >
                     {title}
                   </Link>
                 </li>
@@ -43,11 +77,19 @@ const Header = () => {
             </ul>
           </nav>
 
-          <div className={s.boxLang}>
+          <Link
+            className={s.iconMob}
+            href="https://www.instagram.com/gl.media/"
+            target="_blank"
+          >
+            <BsInstagram />
+          </Link>
+
+          {/* <div className={s.boxLang}>
             <a className={s.lang}>UA</a>
             <span> | </span>
             <a className={s.lang}>EN</a>
-          </div>
+          </div> */}
 
           <ul className={s.contactsList}>
             <li>
@@ -73,6 +115,13 @@ const Header = () => {
         >
           <BsInstagram />
         </Link>
+      </div>
+      <div onClick={handleMobMenuClick} className={s.mobileBtn}>
+        {isOpenMobMenu ? (
+          <AiOutlineClose size={25} />
+        ) : (
+          <AiOutlineMenu size={25} />
+        )}
       </div>
     </header>
   );

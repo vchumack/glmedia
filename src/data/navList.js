@@ -1,7 +1,7 @@
 export const navList = [
   {
     title: "Головна",
-    path: "/",
+    path: "#main",
   },
   {
     title: "Чому ми?",

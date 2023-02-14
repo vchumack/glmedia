@@ -122,3 +122,7 @@ button {
 :-webkit-autofill {
   transition: all 5000s ease-in-out 0s;
 }
+
+.isOpenMenu {
+  overflow: hidden;
+}

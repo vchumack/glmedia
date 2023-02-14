@@ -29,11 +29,11 @@ const Services = () => {
               <li>
                 Проведення рекламних кампаній у блогерів, у великих спільнотах і
                 пабліках, телеграм-каналах -{" "}
-                <span className={s.insidePrice}>від 100$</span>
+                <span className={s.insidePrice}>від 100$;</span>
               </li>
               <li>
                 Таргетована реклама в інстаграмі та фейсбуці -{" "}
-                <span className={s.insidePrice}>від 150$</span>
+                <span className={s.insidePrice}>від 150$.</span>
               </li>
             </ul>
             <p className={s.description}>
@@ -68,7 +68,7 @@ const Services = () => {
               <li>
                 Консультації - <span className={s.insidePrice}>15$/год</span>;
               </li>
-              <li>Менторинг - ціна формується в залежності від запиту</li>
+              <li>Менторинг - ціна формується в залежності від запиту.</li>
             </ul>
           </li>
           <li className={s.boxItem}>
@@ -82,7 +82,7 @@ const Services = () => {
                 вигляді дискусій за різними сценаріями;
               </li>
               <li>Підготовка акаунтів для розміщення цих відгуків;</li>
-              <li>Аналітика та звітність;</li>
+              <li>Аналітика та звітність.</li>
             </ul>
           </li>
         </ul>

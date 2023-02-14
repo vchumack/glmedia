@@ -2,8 +2,8 @@
 @import "@/styles/mixins.scss";
 
 .section {
-   height: 300px;
-   padding-top: 75px;
+   // height: 367px;
+   padding-top: 142px;
    padding-bottom: 75px;
 
    background: url('/images/hero.webp');
@@ -12,13 +12,13 @@
    background-size: cover;
 
    @include media('tablet') {
-      height: 500px;
+      // height: 500px;
       padding-top: 100px;
       padding-bottom: 100px;
    }
 
    @include media('desktopMiddle') {
-      height: 676px;
+      // height: 676px;
       padding-top: 220px;
       padding-bottom: 220px;
 
@@ -55,11 +55,15 @@
    }
 
    p {
+      max-width: 245px;
+      margin-left: auto;
+      margin-right: auto;
+
       font-family: var(--fontFamilySecondary);
-      font-size: 18px;
+      font-size: 24px;
 
       @include media('tablet') {
-
+         max-width: 100%;
          font-size: 24px;
       }
 
