@@ -32,6 +32,10 @@ const ContactForm = () => {
 
   const onSubmit = async (data) => {
     setIsLoading(true);
+    let message = `<i>Application from the website</i>\n`;
+    message += `<i>Sender's name:</i> <b>${data.name}</b>\n`;
+    message += `<i>Sender's email:</i> <b>${data.email}</b>\n`;
+    message += `<i>Sender's tel:</i> <b>${data.tel}</b>`;
 
     try {
       // console.log(data);
@@ -44,7 +48,7 @@ const ContactForm = () => {
         {
           chat_id: "-1001762357803",
           parse_mode: "html",
-          text: JSON.stringify(data),
+          text: message,
         }
       );
 
