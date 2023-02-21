@@ -1,0 +1,16 @@
+{
+  "title": "Get a consultation and offer on your request",
+  "required": "This field is required",
+  "message": "Enter a minimum of 3 characters",
+  "name": "Your name",
+  "error": "Something went wrong, try again",
+  "errorEmail": "Enter your existing email address",
+  "email": "Your email",
+  "tel": "Your phone number",
+  "submit": "Submit",
+  "confident": "By submitting data, you agree to the",
+  "confidentLink": "privacy policy",
+  "successSubmit": "Thank you for filling out the form, your application has been successfully accepted. We will contact you shortly!",
+  "successReturn": "Back to the",
+  "successReturnLink": "Home Page"
+}

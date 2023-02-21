@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import Hero from "@/components/hero";
 import Why from "@/components/why";
@@ -22,4 +22,20 @@ export default function Home() {
       <ContactForm />
     </>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "header",
+        "hero",
+        "why",
+        "services",
+        "contactForm",
+        "footer",
+      ])),
+      // Will be passed to the page component as props
+    },
+  };
 }

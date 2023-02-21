@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import { Raleway, Fira_Sans_Extra_Condensed } from "@next/font/google";
 
 import s from "@/styles/Hero.module.scss";
@@ -14,13 +15,15 @@ const fira = Fira_Sans_Extra_Condensed({
 });
 
 const Hero = () => {
+  const { t } = useTranslation("hero");
+
   return (
     <section className={s.section}>
       <div
         className={`${s.wrapper} wrapper ${raleway.variable} ${fira.variable}`}
       >
-        <h1>Успішна SMM-стратегія для вашого бізнесу</h1>
-        <p>від діджитал студії GL Media</p>
+        <h1>{t("title")}</h1>
+        <p>{t("description")}</p>
       </div>
     </section>
   );

@@ -1,10 +1,15 @@
-import { Raleway, Fira_Sans_Extra_Condensed } from "@next/font/google";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+
+import { Raleway, Fira_Sans_Extra_Condensed } from "@next/font/google";
 import { HiOutlineHeart } from "react-icons/hi";
 import { Oval } from "react-loader-spinner";
+
 import s from "@/styles/ContactForm.module.scss";
+import Link from "next/link";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -18,6 +23,9 @@ const fira = Fira_Sans_Extra_Condensed({
 });
 
 const ContactForm = () => {
+  const { t } = useTranslation("contactForm");
+  const { locale } = useRouter();
+
   const [isSubmit, setIsSubmit] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -84,9 +92,7 @@ const ContactForm = () => {
         <div className={s.wrapper}>
           {!isSubmit ? (
             <>
-              <h2 className={s.title}>
-                Отримати консультацію та пропозицію за вашим запитом
-              </h2>
+              <h2 className={s.title}>{t("title")}</h2>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={s.userBox}>
                   <input
@@ -95,22 +101,19 @@ const ContactForm = () => {
                     id="name"
                     placeholder=" "
                     {...register("name", {
-                      required: "Поле обов'язкове для заповнення",
+                      required: `${t("required")}`,
                       minLength: {
                         value: 3,
-                        message: "Введіть мінімум 3 символи",
+                        message: `${t("message")}`,
                       },
                     })}
                   />
                   <label htmlFor="name" className={s.label}>
-                    Ваше ім'я
+                    {t("name")}
                   </label>
                   <div className={s.error}>
                     {errors?.name && (
-                      <p>
-                        {errors?.name?.message ||
-                          "Щось раптом пішло не так, повторіть спробу"}
-                      </p>
+                      <p>{errors?.name?.message || `${t("error")}`}</p>
                     )}
                   </div>
                 </div>
@@ -121,23 +124,20 @@ const ContactForm = () => {
                     id="email"
                     placeholder=" "
                     {...register("email", {
-                      required: "Поле обов'язкове для заповнення",
+                      required: `${t("required")}`,
                       pattern: {
                         value:
                           /^(?=.{10,63}$)(([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/,
-                        message: "Введіть існуючу адресу пошти",
+                        message: `${t("errorEmail")}`,
                       },
                     })}
                   />
                   <label htmlFor="email" className={s.label}>
-                    Ваша пошта
+                    {t("email")}
                   </label>
                   <div className={s.error}>
                     {errors?.email && (
-                      <p>
-                        {errors?.email?.message ||
-                          "Щось раптом пішло не так, повторіть спробу"}
-                      </p>
+                      <p>{errors?.email?.message || `${t("error")}`}</p>
                     )}
                   </div>
                 </div>
@@ -148,18 +148,15 @@ const ContactForm = () => {
                     id="tel"
                     placeholder=" "
                     {...register("tel", {
-                      required: "Поле обов'язкове для заповнення",
+                      required: `${t("required")}`,
                     })}
                   />
                   <label htmlFor="tel" className={s.label}>
-                    Ваш номер телефону
+                    {t("tel")}
                   </label>
                   <div className={s.error}>
                     {errors?.tel && (
-                      <p>
-                        {errors?.tel?.message ||
-                          "Щось раптом пішло не так, повторіть спробу"}
-                      </p>
+                      <p>{errors?.tel?.message || `${t("error")}`}</p>
                     )}
                   </div>
                 </div>
@@ -171,26 +168,23 @@ const ContactForm = () => {
                     disabled={!isValid}
                     className={s.submit}
                   >
-                    Відправити
+                    {t("submit")}
                   </button>
                   <div className={s.confident}>
-                    Відправляючи дані, ви погоджуєтеся з{" "}
-                    <a href="/privacyPolicy" target="_blanc">
-                      політикою конфіденційності
-                    </a>
+                    {t("confident")}{" "}
+                    <Link href="/privacyPolicy" locale={locale}>
+                      {t("confidentLink")}
+                    </Link>
                   </div>
                 </div>
               </form>
             </>
           ) : (
             <>
-              <p className={s.successSubmit}>
-                Дякуємо за заповнення форми, вашу заявку успішно прийнято. Ми
-                зв'яжемося з вами найближчим часом!
-              </p>
+              <p className={s.successSubmit}>{t("successSubmit")}</p>
               <HiOutlineHeart size={50} className={s.icons} />
               <p className={s.successSubmit}>
-                Повернутися на <a href="/">головну</a>
+                {t("successReturn")} <a href="/">{t("successReturnLink")}</a>
               </p>
             </>
           )}

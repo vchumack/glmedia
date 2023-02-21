@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { Raleway, Red_Hat_Text } from "@next/font/google";
 import { BsInstagram, BsTelegram, BsLinkedin } from "react-icons/bs";
@@ -15,6 +16,8 @@ const redHat = Red_Hat_Text({
 });
 
 const Footer = () => {
+  const { t } = useTranslation("footer");
+
   return (
     <footer id="contacts" className={s.footer}>
       <div
@@ -22,7 +25,7 @@ const Footer = () => {
       >
         <div className={s.row}>
           <div className={s.col}>
-            <h3>Наші контакти</h3>
+            <h3>{t("titleContactLink")}</h3>
             <a
               className={`${s.contactLink} ${s.tel}`}
               href="tel:+380 93 560 44 06"
@@ -37,7 +40,7 @@ const Footer = () => {
             </a>
           </div>
           <div className={s.col}>
-            <h3>Наші соціальні мережі</h3>
+            <h3>{t("titleSocialNetworks")}</h3>
             <div className={s.iconBox}>
               <Link
                 className={s.icon}
@@ -63,13 +66,13 @@ const Footer = () => {
             </div>
           </div>
           <div className={s.col}>
-            <h3>Наша пошта</h3>
+            <h3>{t("titleMail")}</h3>
             <a className={s.contactLink} href="mailto:group@glmedia.org">
               group@glmedia.org
             </a>
           </div>
         </div>
-        <p className={s.copywright}>Copyright © 2023. Розроблено MYD</p>
+        <p className={s.copywright}>{t("copyright")}</p>
       </div>
     </footer>
   );

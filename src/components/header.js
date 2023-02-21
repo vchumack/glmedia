@@ -1,11 +1,16 @@
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
-import { Raleway, Red_Hat_Text } from "@next/font/google";
 import Image from "next/image";
+
+import { Raleway, Red_Hat_Text } from "@next/font/google";
+
 import { BsInstagram } from "react-icons/bs";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { navList } from "@/data/navList";
+
 import s from "@/styles/Header.module.scss";
-import { useEffect, useState } from "react";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -18,6 +23,9 @@ const redHat = Red_Hat_Text({
 });
 
 const Header = () => {
+  const { t } = useTranslation("header");
+  const { locales, locale } = useRouter();
+
   const [isOpenMobMenu, setIsOpenMobMenu] = useState(false);
 
   useEffect(() => {
@@ -29,8 +37,6 @@ const Header = () => {
   }, [isOpenMobMenu]);
 
   const handleMobMenuClick = () => {
-    // if (document.body.classList.contains("isOpenMenu")) {
-    // }
     setIsOpenMobMenu(!isOpenMobMenu);
   };
 
@@ -54,11 +60,15 @@ const Header = () => {
             isOpenMobMenu ? [s.box, s.activeMobMenu].join(" ") : [s.box]
           }
         >
-          {/* <div className={s.boxLangMob}>
-            <a className={s.lang}>UA</a>
+          <div className={s.boxLangMob}>
+            <Link href="/" locale={locales[0]} className={s.lang}>
+              UA
+            </Link>
             <span> | </span>
-            <a className={s.lang}>EN</a>
-          </div> */}
+            <Link href="/" locale={locales[1]} className={s.lang}>
+              EN
+            </Link>
+          </div>
 
           <nav className={s.nav}>
             <ul>
@@ -69,14 +79,15 @@ const Header = () => {
                     href={path}
                     scroll={false}
                     onClick={() => setIsOpenMobMenu(false)}
+                    locale={locale}
                   >
-                    {title}
+                    {t(title)}
                   </Link>
                 </li>
               ))}
+              {/* <li>{t("menu")}</li> */}
             </ul>
           </nav>
-
           <Link
             className={s.iconMob}
             href="https://www.instagram.com/gl.media/"
@@ -84,13 +95,15 @@ const Header = () => {
           >
             <BsInstagram />
           </Link>
-
-          {/* <div className={s.boxLang}>
-            <a className={s.lang}>UA</a>
+          <div className={s.boxLang}>
+            <Link href="/" className={s.lang} locale={locales[0]}>
+              UA
+            </Link>
             <span> | </span>
-            <a className={s.lang}>EN</a>
-          </div> */}
-
+            <Link href="/" className={s.lang} locale={locales[1]}>
+              EN
+            </Link>
+          </div>
           <ul className={s.contactsList}>
             <li>
               <a

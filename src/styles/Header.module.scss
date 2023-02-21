@@ -125,6 +125,12 @@
    }
 }
 
+.iconMob {
+
+   @include media('tablet') {
+      display: none;
+   }
+}
 
 .link {
    position: relative;

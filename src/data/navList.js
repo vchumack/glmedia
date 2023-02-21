@@ -1,18 +1,18 @@
 export const navList = [
   {
-    title: "Головна",
-    path: "#main",
+    title: "main",
+    path: "/",
   },
   {
-    title: "Чому ми?",
+    title: "why",
     path: "#why",
   },
   {
-    title: "Послуги",
+    title: "services",
     path: "#services",
   },
   {
-    title: "Контакти",
+    title: "contacts",
     path: "#contacts",
   },
 ];

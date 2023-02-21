@@ -13,6 +13,7 @@
    @include wrapperTitle();
 
    h2 {
+      padding-top: 20px;
       font-family: var(--fontFamilyBase);
    }
 }
@@ -21,7 +22,7 @@
    @include flex(space-around, center);
 
    gap: 20px;
-   flex-direction: column;
+   flex-direction: column-reverse;
    margin-bottom: 50px;
 
    @include media('tablet') {
@@ -35,7 +36,7 @@
 .secondBox {
    @include flex(space-between, center);
    gap: 20px;
-   flex-direction: column-reverse;
+   flex-direction: column;
    margin-bottom: 50px;
 
 

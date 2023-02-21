@@ -1,8 +1,9 @@
+import { useTranslation } from "next-i18next";
 import { Raleway, Fira_Sans_Extra_Condensed } from "@next/font/google";
 import Image from "next/image";
 import teamOneSrc from "../../public/images/7395.webp";
-import teamTwoSrc from "../../public/images/7643.jpg";
-// import teamTwoSrc from "../../public/images/7643.webp";
+// import teamTwoSrc from "../../public/images/7643.jpg";
+import teamTwoSrc from "../../public/images/7643.webp";
 
 import s from "@/styles/Why.module.scss";
 
@@ -18,12 +19,14 @@ const fira = Fira_Sans_Extra_Condensed({
 });
 
 const Why = () => {
+  const { t } = useTranslation("why");
+
   return (
     <section id="why" className={s.section}>
       <div
         className={`${s.wrapper} wrapper ${raleway.variable} ${fira.variable}`}
       >
-        <h2>Чому ми?</h2>
+        <h2>{t("title")}</h2>
 
         <div className={s.box}>
           <div className={s.photo}>
@@ -36,20 +39,16 @@ const Why = () => {
           </div>
 
           <div className={s.reasons}>
-            <h3>Близько 10 років досвіду</h3>
+            <h3>{t("titleReasons")}</h3>
             <ul className={s.list}>
+              <li>{t("reason1")}</li>
               <li>
-                з 2012 року ми продовжуємо активно розвивати бренди в соціальних
-                мережах;
+                {t("reason2")}{" "}
+                <span className={s.accentText}>{t("reason2span")}</span>;
               </li>
               <li>
-                за цей час ми успішно співпрацювали з більш ніж{" "}
-                <span className={s.accentText}>100 брендами</span>;
-              </li>
-              <li>
-                закрили більш ніж{" "}
-                <span className={s.accentText}>500 проєктів</span> з позитивними
-                відгуками клієнтів.
+                {t("reason3")}{" "}
+                <span className={s.accentText}>{t("reason3span")}</span>
               </li>
             </ul>
           </div>
@@ -57,24 +56,9 @@ const Why = () => {
         <div className={s.secondBox}>
           <div className={s.secondReasons}>
             <ul className={s.list}>
-              <li>
-                Ми розуміємо, що соціальні мережі – це потужний інструмент для
-                залучення клієнтів та підвищення лояльності бренду. Тому ми
-                створюємо індивідуальні стратегії для кожного клієнта,
-                враховуючи його бізнес-мети та особливості цільової аудиторії.
-              </li>
-              <li>
-                Наша студія гарантує ретельні та професійні підходи до кожного
-                проекту, а також своєчасну звітність та відкритість для
-                спілкування з клієнтом. Ми завжди раді допомогти вашому бізнесу
-                досягти успіху у соціальних мережах.
-              </li>
-              <li>
-                З нами ваш бренд буде в безпеці та отримає максимум можливостей
-                соціальних мереж для зростання та розвитку. Не соромтеся
-                зв'язатися з нами для отримання більш детальної інформації та
-                консультації.
-              </li>
+              <li>{t("reason4")}</li>
+              <li>{t("reason5")}</li>
+              <li>{t("reason6")}</li>
             </ul>
           </div>
 

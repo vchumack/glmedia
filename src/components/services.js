@@ -1,4 +1,6 @@
+import { useTranslation } from "next-i18next";
 import { Raleway, Fira_Sans_Extra_Condensed } from "@next/font/google";
+
 import s from "@/styles/Services.module.scss";
 
 const raleway = Raleway({
@@ -13,84 +15,76 @@ const fira = Fira_Sans_Extra_Condensed({
 });
 
 const Services = () => {
+  const { t } = useTranslation("services");
+
   return (
     <section id="services" className={s.section}>
       <div
         className={`${s.wrapper} wrapper ${raleway.variable} ${fira.variable}`}
       >
-        <h2>Наші послуги</h2>
+        <h2>{t("title")}</h2>
         <ul className={s.box}>
           <li className={s.boxItem}>
             <div className={s.boxTitle}>
-              <h3 className={s.title}>Маркетинг впливу, таргет</h3>
+              <h3 className={s.title}>{t("titleService1")}</h3>
             </div>
-            <p className={s.price}>від 150$ </p>
+            <p className={s.price}>{t("price1")}</p>
             <ul className={s.list}>
               <li>
-                Проведення рекламних кампаній у блогерів, у великих спільнотах і
-                пабліках, телеграм-каналах -{" "}
-                <span className={s.insidePrice}>від 100$;</span>
+                {t("service1.1")}{" "}
+                <span className={s.insidePrice}>{t("service1.1price")}</span>
               </li>
               <li>
-                Таргетована реклама в інстаграмі та фейсбуці -{" "}
-                <span className={s.insidePrice}>від 150$.</span>
+                {t("service1.2")}{" "}
+                <span className={s.insidePrice}>{t("service1.2price")}</span>
               </li>
             </ul>
-            <p className={s.description}>
-              *Ціни вказані за нашу роботу, бюджети на рекламну кампанію
-              формуються окремо
-            </p>
+            <p className={s.description}>{t("description")}</p>
           </li>
           <li className={s.boxItem}>
             <div className={s.boxTitle}>
               {" "}
-              <h3 className={s.title}>Ведення акаунтів у соціальних мережах</h3>
+              <h3 className={s.title}>{t("titleService2")}</h3>
             </div>
-            <p className={s.price}>від 200$</p>
+            <p className={s.price}>{t("price2")}</p>
             <ul className={s.list}>
-              <li>Створення контент-плану;</li>
-              <li>Створення постів;</li>
-              <li>Створення сторіз;</li>
-              <li>Розміщення матеріалів за графіком;</li>
-              <li>Коментарі від імені бренду, спілкування з користувачами;</li>
-              <li>Оформлення профілю, дизайнерські послуги.</li>
+              <li>{t("service2.1")}</li>
+              <li>{t("service2.2")}</li>
+              <li>{t("service2.3")}</li>
+              <li>{t("service2.4")}</li>
+              <li>{t("service2.5")}</li>
+              <li>{t("service2.6")}</li>
             </ul>
           </li>
           <li className={s.boxItem}>
             <div className={s.boxTitle}>
-              <h3 className={s.title}>Курси з SMM і таргетованої реклами</h3>
+              <h3 className={s.title}>{t("titleService3")}</h3>
             </div>
-            <p className={s.price}>від 200$</p>
-            <p className={s.description}>Онлайн і не за записами: </p>
+            <p className={s.price}>{t("price3")}</p>
+            <p className={s.description}>{t("service3.1")}</p>
             <ul className={s.list}>
-              <li>Індивідуальне навчання;</li>
-              <li>Навчання в групах;</li>
+              <li>{t("service3.2")}</li>
+              <li>{t("service3.3")}</li>
               <li>
-                Консультації - <span className={s.insidePrice}>15$/год</span>;
+                {t("service3.4")}
+                <span className={s.insidePrice}>{t("price3.4")}</span>
               </li>
-              <li>Менторинг - ціна формується в залежності від запиту.</li>
             </ul>
           </li>
           <li className={s.boxItem}>
             <div className={s.boxTitle}>
-              <h3 className={s.title}>SERM, Партизанський маркетинг</h3>
+              <h3 className={s.title}>{t("titleService4")}</h3>
             </div>
-            <p className={s.price}>від 150$</p>
+            <p className={s.price}>{t("price4")}</p>
             <ul className={s.list}>
-              <li>
-                Підготовка відгуків на сайтах, соціальних мережах, форумах у
-                вигляді дискусій за різними сценаріями;
-              </li>
-              <li>Підготовка акаунтів для розміщення цих відгуків;</li>
-              <li>Аналітика та звітність.</li>
+              <li>{t("service4.1")}</li>
+
+              <li>{t("service4.2")}</li>
+              <li>{t("service4.3")}</li>
             </ul>
           </li>
         </ul>
-        <p className={s.description}>
-          *Ціни вказані орієнтовно. Точна вартість вашого проєкту стане відома
-          після розрахунку обсягу роботи, який буде потрібен під ваш конкретний
-          запит. Для консультації та розрахунку заповніть форму нижче:
-        </p>
+        <p className={s.description}>{t("descriptionSection")}</p>
       </div>
     </section>
   );
