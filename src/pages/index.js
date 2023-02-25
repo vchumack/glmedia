@@ -16,6 +16,7 @@ export default function Home() {
           content="Просування в соціальних мережах, створення контенту, розкрутка блогів, маркетинг, SMM"
         />
       </Head>
+      
       <Hero />
       <Why />
       <Services />
